@@ -8,11 +8,10 @@
 <body>
 	<script type="text/javascript" src="js/angular.min.js"></script>
 	<div class="container">
-		<div ng-app="" ng-init=" names=['Jani','Hege','Kari'] ">
-			<ul><li ng-repeat="x in names">
-				{{x}}
-			</li></ul>
-		</div>
+		<form ng-app="" name="myForm">
+			Email : <input type="email" name="myAddress" ng-model="text">
+			<span ng-show="myForm.myAddress.$error.email">Not a valide Email Addreess</span>
+		</form>
 	</div>
 	
 </body>
