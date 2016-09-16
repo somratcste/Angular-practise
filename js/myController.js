@@ -1,4 +1,5 @@
-app.controller('myCtrl', function($scope){
-			$scope.firstName = "John";
-			$scope.lastName = "Doe";
-		});
+app.directive("somratInfo" , function(){
+	return {
+		template : "<h1>Made me a directive</h1>"
+	};
+});
