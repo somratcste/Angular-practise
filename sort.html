@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Learn Angular Js</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<div class="container">
+		<div ng-app="myApp" ng-controller="namesCtrl">
+			<table border="1" width="100%">
+				<tr>
+					<th ng-click="orderByMe('name')">Name</th>
+					<th ng-click="orderByMe('country')">Country</th>
+				</tr>
+				<tr ng-repeat="x in names | orderBy:myorderBy">
+					<td>{{x.name}}</td>
+					<td>{{x.country}}</td>
+				</tr>				
+			</table>
+		</div>
+	</div>
+	<script type="text/javascript">
+		angular.module('myApp' , []).controller('namesCtrl' , function($scope) {
+			$scope.names = [
+				{name:'Jani',country:'Norway'},
+				{name:'Carl',country:'Swede'},
+				{name:'Hege',country:'Denmar'}
+			];
+			$scope.orderByMe = function(x) {
+				$scope.myorderBy = x;
+
+			}
+		}); 
+	</script>
+	
+</body>
+</html>
